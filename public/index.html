@@ -21,14 +21,13 @@
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-
     
-    <data-box indicateur="conf" title="Nombre de cas confirmés" unit="cas confirmés"></data-box>
-    <data-box indicateur="dc_tot" title="Cumul des décès" unit="décès"></data-box>
-    <data-box indicateur="rea" title="Patients en réanimation" unit="patients"></data-box>
-
-    <line-chart indicateur="conf" title="Nombre de cas confirmés" unit="cas confirmés"></line-chart>
-    <line-chart indicateur="rea" title="Patients en réanimation" unit="patients"></line-chart>
+    <geo-lists></geo-lists>
+    <display-image git-url="https://github.com/geoffreyaldebert/data-dashboards/raw/master/vaccins-dose1/" width-image="600"></display-image>
+    <display-image git-url="https://github.com/geoffreyaldebert/data-dashboards/raw/master/hist-doses/" width-image="1000"></display-image>
+    <display-image git-url="https://github.com/geoffreyaldebert/data-dashboards/raw/master/graph-doses/" width-image="1000"></display-image>
+    <display-image git-url="https://github.com/geoffreyaldebert/data-dashboards/raw/master/hist-gender/" width-image="1000"></display-image>
+    <display-image git-url="https://github.com/geoffreyaldebert/data-dashboards/raw/master/hist-ages/" width-image="1000"></display-image>
 
   </body>
 </html>

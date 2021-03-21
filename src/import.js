@@ -17,8 +17,21 @@ export const getData = async function (store) {
 		mesuresData[row["date"]] = row
 	})
 
+	const regionaldataRequest2 = await fetch("https://raw.githubusercontent.com/geoffreyaldebert/data-dashboards/master/regions.json")
+	const regionalData = await regionaldataRequest2.json()
+	store.commit("setTerritoireData",{level:"reg",data:regionalData})
+
+	console.log(regionalData)
+
+	const departementaldataRequest2 = await fetch("https://raw.githubusercontent.com/geoffreyaldebert/data-dashboards/master/departements.json")
+	const departementalData = await departementaldataRequest2.json()
+	store.commit("setTerritoireData",{level:"dep",data:departementalData})
+
+
 	store.commit("initData",mesuresData)
+
 	store.commit("endImport",true)
+
 
 	return true
 }

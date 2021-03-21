@@ -6,7 +6,15 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     endImport:false,
-    data:{}
+    data:{},
+    user:{
+      selectedGeoLevel:"national",
+      selectedGeoCode:undefined
+    },
+    territoireData:{
+      regional:{},
+      departemental:{}
+    }
   },
   mutations: {
     endImport (state,value) {
@@ -15,5 +23,12 @@ export default new Vuex.Store({
     initData (state,data) {
       state.data = data
     },
+    setTerritoireData (state,payload) {
+      state.territoireData[payload.level] = payload.data
+    },
+    setUserChoices (state,payload){
+      state.user.selectedGeoLevel = payload.level
+      state.user.selectedGeoCode = payload.code
+    }
   }
 })
